@@ -1,0 +1,58 @@
+# Change Log
+All notable changes to “Obi - Advanced softbodies for Unity” will be documented in this file.
+
+## [5.0]
+
+
+#IMPORTANT: You’ll need to re-create all your 4.x ObiSoftbody components. Data serialization and workflows are significantly different from previous versions.
+
+### Changed
+- Introduced blueprints: particle/constraint object representations are now stored in assets called "blueprints" (as opposed to being stored in the actor itself, as in previous versions). This improves
+memory consumption, editor performance, completely separates data from the runtime components that operate on it, and enables easier and faster workflow.
+- Simplified underlying engine, constraints are grouped in batches using graph coloring for optimal parallelism.
+- Unified handles and pin constraints as "attachments".
+- Pin and distance constraints now correctly report forces in Newtons.
+- Unitless "Stiffness" parameters have been replaced by "Compliance" parameters in most constraint types, expressed in Newtons/meter.
+
+### Added
+- Added voxel-based particle sampling method. Note that this will generate way more particles than the classic surface sampling. Use it when surface sampling of your mesh just isn't enough.
+
+### Removed
+- World space/local space simulation. Simulation is now always performed in solver space.
+- Solvers no longer have a maxParticles attribute. They dynamically change their capacity at runtime.
+
+### Fixed
+- Crash in certain iOS devices using the A12 cpu.
+
+
+## [4.1]
+
+### Added
+- Bake Mesh functionality that allows to generate a mesh asset from a deformed softbody.
+- More accurate collision/contact model, using staggered projections.
+- Approximate shock propagation for particle contacts. This makes particle stacking easier and stabler. A new parameter has been added to the solver that controls the amount of shock propagation.
+- Split material friction into static and dynamic friction.
+- Added rolling contacts w/ rolling friction. These are slightly more expensive than regular contacts. Can be controlled on a per-collision material basis.
+- Added ObiInstancedParticleRenderer, allows to draw particles as instances of an arbitrary mesh (requires GPU instancing).
+- Particle-particle collision callbacks (solver.OnParticleCollision)
+
+### Changed
+- Moved softbody skinning to its own component, ObiSoftbodySkinner. This allows multiple meshes to be skinned to the same softbody particles.
+- More reliable, higher precision algorithm for distance field generation. Specially noticeable in sharp corners/crevices.
+
+### Fixed
+- Bug that caused spurious torque when initializing a softbody at non-zero rotation.
+- Bug that caused mesh colliders with negative thickness to crash.
+
+## [4.0.2]
+
+### Changed
+- Switched the Windows compiler to Clang/LLVM, resulting in a huge performance improvement.
+
+### Fixed
+- Null ref exception when copying a ObiCloth component.
+- Issue with pin constraints overshooting when solver set to world space mode.
+- Issue that prevented pin constraints being torn.
+
+## [4.0.0] - 2018-12-2
+- Initial release.

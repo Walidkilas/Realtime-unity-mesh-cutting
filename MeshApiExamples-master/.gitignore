@@ -1,0 +1,27 @@
+/Library/
+/Logs/
+/Temp/
+/UserSettings/
+/obj/
+
+# macOS
+.DS_Store
+
+# Rider
+/Assets/Plugins/Editor/JetBrains*
+/.idea/
+
+# Visual Studio files/caches
+.vs/
+*.csproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+Builds/*
