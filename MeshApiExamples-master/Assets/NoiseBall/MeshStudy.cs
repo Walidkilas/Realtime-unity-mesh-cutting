@@ -266,14 +266,15 @@ public class MeshStudy : MonoBehaviour
         firstVert = true;
         previousTris.Clear();
     }
+
     void OnCollisionStay(Collision collision)
     {
 
 
         if (collision.gameObject.tag == "cutter")
         {
-
             ContactPoint contact = collision.contacts[0];
+           
             if (contact.point != null)
             {
                 isDone = false;
