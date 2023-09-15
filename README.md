@@ -1,6 +1,6 @@
 # Unity Real-Time Mesh Cutting
-![05fig02](https://github.com/Walidkilas/Surgery-simulation/assets/96785550/3677c53d-9a2f-4621-9e71-1578f3c99164)
 
+![05fig02](https://github.com/Walidkilas/Surgery-simulation/assets/96785550/daf8944c-6c51-4f28-95e2-590f15fe64f7)
 
 
 ## About
@@ -15,7 +15,7 @@ Key features of this project include:
 
 ## Demo
 
-![simu](https://github.com/Walidkilas/Surgery-simulation/assets/96785550/fff3490b-e618-4f8d-85b2-44298f52b9c0)
+![simu](https://github.com/Walidkilas/Surgery-simulation/assets/96785550/af69506c-2bfe-4551-8014-2ee02be4614e)
 
 ## Getting Started
 
